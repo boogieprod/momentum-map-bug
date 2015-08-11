@@ -1,0 +1,22 @@
+<head>
+  <title>mapbug-route</title>
+</head>
+
+<template name="layout">
+  <a href="/">Home</a>
+  <a href="/map">Map</a>
+  <hr>
+  {{#momentum plugin='iron-router' options=momentumIRTransition}}
+  	{{> yield}}
+  {{/momentum}}
+</template>
+
+<template name="home">
+  no map
+</template>
+
+<template name="map">
+  <div class="map-container">
+    {{> googleMap name="exampleMap" options=exampleMapOptions}}
+  </div>
+</template>
