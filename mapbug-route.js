@@ -38,6 +38,6 @@ if (Meteor.isClient) {
           map: map.instance
         });
       });
-    }, 1);
+    }, 2000);
   });
 }
