@@ -29,15 +29,11 @@ if (Meteor.isClient) {
   });
 
   Template.map.onCreated(function() {
-    // We can use the `ready` callback to interact with the map API once the map is ready.
-    Meteor.setTimeout(function(func, delay) {
-      GoogleMaps.ready('exampleMap', function(map) {
-        // Add a marker to the map once it's ready
-        var marker = new google.maps.Marker({
-          position: map.options.center,
-          map: map.instance
-        });
+    GoogleMaps.ready('exampleMap', function(map) {
+      var marker = new google.maps.Marker({
+        position: map.options.center,
+        map: map.instance
       });
-    }, 2000);
+    });
   });
 }
